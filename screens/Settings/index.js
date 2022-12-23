@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const Message = () => {
+const Setting = () => {
   return (
     <View>
-      <Text>Ecran de message</Text>
+      <Text>Ecran Settings</Text>
     </View>
   );
 };
 
-export default Message;
+export default Setting;

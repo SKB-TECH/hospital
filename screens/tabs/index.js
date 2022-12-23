@@ -1,8 +1,10 @@
-import {View, Text} from 'react-native';
+import {View, Text, Settings} from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../Home';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import Message from '../Messages';
+import Setting from '../Settings';
 
 //const Tab = createBottomTabNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -10,14 +12,13 @@ const BottomTabs = () => {
   return (
     <Tab.Navigator
       initialRouteName="home"
-      activeColor="#fff"
+      activeColor="#ffffff"
       barStyle={{backgroundColor: 'blue'}}
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
         headerShown: false,
       }}>
       <Tab.Screen
-        name="Feed_home"
+        name="home"
         component={Home}
         options={{
           tabBarLabel: 'Dashbord',
@@ -27,8 +28,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="home"
-        component={Home}
+        name="Message"
+        component={Message}
         options={{
           tabBarLabel: 'Chat',
           tabBarIcon: ({color, size}) => (
@@ -38,8 +39,8 @@ const BottomTabs = () => {
         }}
       />
       <Tab.Screen
-        name="tabs_home"
-        component={Home}
+        name="setting"
+        component={Setting}
         options={{
           tabBarLabel: 'Parametres',
           tabBarIcon: ({color, size}) => (
