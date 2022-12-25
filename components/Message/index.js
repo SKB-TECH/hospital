@@ -1,6 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import styleConversation from './style.js';
+import {COLORS} from '../../outils/constants.js';
 
 const Message = ({item}) => {
   const isMine = () => {
@@ -8,14 +9,14 @@ const Message = ({item}) => {
   };
   return (
     <View
-      style={
-        (styleConversation.container,
+      style={[
+        styleConversation.container,
         {
-          backgroundColor: isMine() ? '#DCF8C5' : 'white',
+          backgroundColor: isMine() ? COLORS.main : 'white',
           alignSelf: isMine() ? 'flex-end' : 'flex-start',
-        })
-      }>
-      <Text>{item.message}</Text>
+        },
+      ]}>
+      <Text style={{color: isMine() ? 'white' : 'black'}}>{item.message}</Text>
     </View>
   );
 };

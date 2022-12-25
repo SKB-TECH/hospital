@@ -7,7 +7,7 @@ const styleConversation = StyleSheet.create({
     margin: 15,
     padding: 30,
     borderRadius: 15,
-    maxWidth: '80%',
+    maxWidth: '90%',
   },
 });
 

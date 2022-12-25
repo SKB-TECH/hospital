@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import styleDetail from './style';
 import {fakeConversation} from '../../fakesData/fakeConversations';
 import Message from '../../components/Message';
+import MessageInput from '../../components/messageInput/index';
 const MessageDetails = ({route, navigation}) => {
   const {item} = route.params;
 
@@ -10,15 +11,18 @@ const MessageDetails = ({route, navigation}) => {
     navigation.setOptions({title: item.fullname});
   });
   return (
-    <View>
-      <FlatList
-        data={fakeConversation}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => {
-          return <Message item={item} />;
-        }}
-      />
-    </View>
+    <>
+      <View style={{flex: 1}}>
+        <FlatList
+          data={fakeConversation}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => {
+            return <Message item={item} />;
+          }}
+        />
+        <MessageInput />
+      </View>
+    </>
   );
 };
 
