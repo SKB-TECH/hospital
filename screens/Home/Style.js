@@ -44,20 +44,43 @@ const dashBoard = StyleSheet.create({
     color: COLORS.main,
   },
   doctorContainer: {
+    marginTop: 10,
     paddingHorizontal: PADDING.horizontale,
     paddingVertical: PADDING.verticale,
+  },
+  doctorImg: {
+    width: 60,
+    height: 60,
+    borderRadius: 60 / 2,
+    marginRight: 15,
   },
   doctorCard: {
     flex: 1,
     flexDirection: 'row',
     backgroundColor: 'white',
-    marginBottom: 20,
+    marginBottom: 10,
     elevation: 5,
+    margin: 10,
+    padding: 5,
     paddingHorizontal: PADDING.horizontale,
     paddingVertical: PADDING.verticale,
-    padding: 10,
+    borderRadius: 8,
+  },
+  doctorInfo: {
+    flexDirection: 'column',
+  },
+  doctorName: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginBottom: 15,
+  },
+  doctorSpe: {
+    backgroundColor: COLORS.main,
+    padding: 5,
+    color: 'white',
+    paddingHorizontal: PADDING.horizontale,
     borderRadius: 15,
-    
+    fontSize: 14,
   },
 });
 

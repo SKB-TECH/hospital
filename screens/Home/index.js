@@ -61,10 +61,17 @@ const Home = () => {
         </TouchableOpacity>
       </View>
       <View>
-        {listDoctor.map((doctor, index) => {
+        {listDoctor.splice(0, 3).map(doctor => {
           return (
             <TouchableOpacity key={doctor.id} style={dashBoard.doctorCard}>
-              <Text>{doctor.fullname}</Text>
+              <Image
+                source={{uri: `${doctor.img}`}}
+                style={dashBoard.doctorImg}
+              />
+              <View style={dashBoard.doctorInfo}>
+                <Text style={dashBoard.doctorName}>{doctor.fullname}</Text>
+                <Text style={dashBoard.doctorSpe}>{doctor.speciality}</Text>
+              </View>
             </TouchableOpacity>
           );
         })}
