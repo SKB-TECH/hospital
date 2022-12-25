@@ -1,7 +1,8 @@
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import React, {useEffect} from 'react';
 import styleDetail from './style';
-
+import {fakeConversation} from '../../fakesData/fakeConversations';
+import Message from '../../components/Message';
 const MessageDetails = ({route, navigation}) => {
   const {item} = route.params;
 
@@ -10,7 +11,13 @@ const MessageDetails = ({route, navigation}) => {
   });
   return (
     <View>
-      <Text>{item.fullname}</Text>
+      <FlatList
+        data={fakeConversation}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => {
+          return <Message item={item} />;
+        }}
+      />
     </View>
   );
 };
