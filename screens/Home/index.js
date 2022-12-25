@@ -1,4 +1,11 @@
-import {View, Text, ScrollView, Image, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 
 import React from 'react';
 import dashBoard from './Style.js';
@@ -6,6 +13,7 @@ import {FakeActivity} from '../../fakesData/fakeActivity.js';
 import Symptome from '../../components/symptomes/index.js';
 import ActivityItems from '../../components/activity/index.js';
 import {fakeSymptome} from '../../fakesData/fakeSymptomes.js';
+import {listDoctor} from '../../fakesData/fakeDocteur';
 import SymptomeItem from '../../components/symptomes/index.js';
 
 const Home = () => {
@@ -45,6 +53,22 @@ const Home = () => {
           return <SymptomeItem item={item} />;
         }}
       />
+      {/* Fin symptome list */}
+      <View style={dashBoard.title_space_between}>
+        <Text style={dashBoard.titleBold}> Nos docteurs</Text>
+        <TouchableOpacity>
+          <Text style={dashBoard.link}> Afficher Tout</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        {listDoctor.map((doctor, index) => {
+          return (
+            <TouchableOpacity key={doctor.id} style={dashBoard.doctorCard}>
+              <Text>{doctor.fullname}</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
     </ScrollView>
   );
 };
