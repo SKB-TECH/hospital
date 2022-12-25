@@ -1,7 +1,12 @@
 import {View, Text, ScrollView, Image, FlatList} from 'react-native';
+
 import React from 'react';
 import dashBoard from './Style.js';
 import {FakeActivity} from '../../fakesData/fakeActivity.js';
+import Symptome from '../../components/symptomes/index.js';
+import ActivityItems from '../../components/activity/index.js';
+import {fakeSymptome} from '../../fakesData/fakeSymptomes.js';
+import SymptomeItem from '../../components/symptomes/index.js';
 
 const Home = () => {
   return (
@@ -23,11 +28,21 @@ const Home = () => {
         showsHorizontalScrollIndicator={false}
         style={dashBoard.scrollableListe}
         renderItem={({item}) => {
-          return (
-            <View style={dashBoard.scrollableListItem}>
-              <Text>{item.mainText}</Text>
-            </View>
-          );
+          return <ActivityItems item={item} />;
+        }}
+      />
+      {/* List of symptomes */}
+      <View style={dashBoard.title}>
+        <Text style={dashBoard.titleBold}> Quel symptome avez vous ?</Text>
+      </View>
+      <FlatList
+        horizontal={true}
+        keyExtractor={item => item.id}
+        data={fakeSymptome}
+        showsHorizontalScrollIndicator={false}
+        style={dashBoard.scrollableListe}
+        renderItem={({item}) => {
+          return <SymptomeItem item={item} />;
         }}
       />
     </ScrollView>

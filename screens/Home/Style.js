@@ -26,11 +26,13 @@ const dashBoard = StyleSheet.create({
     paddingHorizontal: PADDING.horizontale,
     paddingVertical: PADDING.verticale,
   },
-  scrollableListItem: {
+
+  title: {
     paddingHorizontal: PADDING.horizontale,
     paddingVertical: PADDING.verticale,
-    backgroundColor: 'white',
-    marginRight: 15,
+  },
+  titleBold: {
+    fontWeight: 'bold',
   },
 });
 
